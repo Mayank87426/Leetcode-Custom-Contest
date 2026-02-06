@@ -1,0 +1,262 @@
+/* =========================
+   GLOBAL RESET & FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 300% 300%;
+    animation: bgShift 12s ease infinite;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   BACKGROUND ANIMATION
+========================= */
+@keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(15px);
+    box-shadow:
+        0 0 30px rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    animation: fadeIn 1.2s ease;
+}
+
+/* =========================
+   FADE IN
+========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(79, 172, 254, 0.6);
+}
+
+/* =========================
+   INPUT SECTION
+========================= */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+input[type="number"] {
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    color: #fff;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* START BUTTON */
+.start-button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.6);
+}
+
+.start-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 198, 255, 0.9);
+}
+
+/* REGENERATE BUTTON */
+.regenerate-button {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    box-shadow: 0 0 20px rgba(255, 210, 0, 0.6);
+}
+
+.regenerate-button:hover {
+    box-shadow: 0 0 30px rgba(255, 210, 0, 0.9);
+}
+
+/* END BUTTON */
+.end-button {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0 0 20px rgba(255, 75, 43, 0.6);
+}
+
+.end-button:hover {
+    box-shadow: 0 0 30px rgba(255, 75, 43, 0.9);
+}
+
+/* =========================
+   QUESTION LIST
+========================= */
+.question-list {
+    margin-top: 30px;
+    display: grid;
+    gap: 15px;
+}
+
+.question-list div {
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #00f2fe;
+    transition: all 0.3s ease;
+}
+
+.question-list div:hover {
+    transform: translateX(8px);
+    background: rgba(0, 242, 254, 0.1);
+}
+
+/* =========================
+   TIMER
+========================= */
+.timer {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    text-align: center;
+    box-shadow: 0 0 30px rgba(195, 55, 100, 0.6);
+    animation: pulse 2s infinite;
+}
+
+#timer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   TIMER PULSE
+========================= */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(195, 55, 100, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(195, 55, 100, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(195, 55, 100, 0.4);
+    }
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.hidden {
+    display: none;
+}
+/* =========================
+   SOLVED STATE
+========================= */
+.question-item.solved {
+    background: rgba(0, 255, 120, 0.18);
+    border-left: 4px solid #00ff88;
+    box-shadow: 0 0 18px rgba(0, 255, 120, 0.4);
+}
+
+.question-item.solved:hover {
+    transform: translateX(8px) scale(1.01);
+}
+
+.question-item.solved a {
+    color: #9affc7;
+    text-decoration: line-through;
+    font-weight: 600;
+}
+
+/* SOLVED BUTTON */
+.tick-button {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00c853, #64dd17);
+    color: #002b16;
+    transition: all 0.25s ease;
+}
+
+.tick-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 120, 0.8);
+}
+
+.question-item.solved .tick-button {
+    background: linear-gradient(135deg, #ff5252, #ff1744);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 23, 68, 0.8);
+}
